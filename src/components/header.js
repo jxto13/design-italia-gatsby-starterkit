@@ -191,7 +191,7 @@ const CenterHeader = ({ theme, townName, townTagLine }) => {
               </li>
             </ul>
           </HeaderSocialsZone>
-          <HeaderSearch label="Cerca" iconName="it-search" />
+          {/* <HeaderSearch label="Cerca" iconName="it-search" /> */}
         </HeaderRightZone>
       </HeaderContent>
     </Header>
@@ -263,7 +263,7 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
   const page = getSectionFromLocation(location);
   const { name, tagLine } = town;
   return (
-    <Headers sticky={!!sticky}>
+    <Headers sticky={!sticky}>
       <SlimTag theme={theme} />
       <div className="it-nav-wrapper">
         <CenterHeader theme={theme} townName={name} townTagLine={tagLine} />

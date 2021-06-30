@@ -14,7 +14,7 @@ import {
   Row,
   Col,
   LinkListItem,
-  LinkList,
+  LinkList
 } from "design-react-kit";
 
 import Layout from "../components/layout";
