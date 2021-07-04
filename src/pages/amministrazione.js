@@ -17,11 +17,13 @@ import {
   LinkList,
 } from "design-react-kit";
 
-import Layout from "../components/layout";
+// import Layout from "../components/layout";
+import Page_Layout from "../components/page_layout";
 import SEO from "../components/seo";
 
 const Amministrazione = ({ location }) => (
-  <Layout location={location}>
+  // <Layout location={location}>
+  <Page_Layout location={location}>
     {/* eslint-disable-next-line*/}
     <SEO title="Amministrazione" />
     <main>
@@ -233,7 +235,8 @@ const Amministrazione = ({ location }) => (
         </div>
       </section>
     </main>
-  </Layout>
+  {/* </Layout> */}
+  </Page_Layout>
 );
 
 export default Amministrazione;
