@@ -7,6 +7,7 @@ const Form = () => (
   <Layout>
     {/* eslint-disable-next-line*/}
     <SEO title="form" />
+    <input type="hidden" name="bot-field" />
     <form name="contact" method="POST" data-netlify="true">
   <p>
     <label>Your Name: <input type="text" name="name" /></label>   
