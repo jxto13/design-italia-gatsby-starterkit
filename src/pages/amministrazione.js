@@ -21,6 +21,8 @@ import {
 import Page_Layout from "../components/page_layout";
 import SEO from "../components/seo";
 
+import Banner from "../components/card";
+
 const Amministrazione = ({ location }) => (
   // <Layout location={location}>
   <Page_Layout location={location}>
@@ -44,16 +46,20 @@ const Amministrazione = ({ location }) => (
           </Col>
         </Row>
       </Container>
+
       <Container tag="section" id="intro" className="px-4 my-4">
         <Row>
-          <Col lg={7} className="px-lg-4 py-lg-2">
+          
+          <Col lg={9} className="px-lg-4 py-lg-2">
             <h1>Amministrazione</h1>
             <p>
               Donec in consequat nunc. Duis semper fermentum lacus, ac
               condimentum justo auctor a. Nam erat erat, porta vel pharetra in,
               ullamcorper vel turpis.
             </p>
-            <div className="form-group mt-5">
+            <Banner/>
+
+            {/* <div className="form-group mt-5">
               <form>
                 <Input
                   id="ricerca-amministrazione"
@@ -80,9 +86,12 @@ const Amministrazione = ({ location }) => (
                   <span>Aggiungi filtro</span>
                 </button>
               </div>
-            </div>
+            </div> */}
           </Col>
-          <Col lg={{ size: 4, offset: 1 }} className="pt-5 pt-lg-2">
+          {/* <div className="section section-muted pb-5 pt-0">
+              <Banner/>
+            </div> */}
+          <Col lg={{ size: 3, offset: 0 }} className="pt-5 pt-lg-2">
             <LinkList className="footer-list clearfix">
               {[
                 "Tutta l'Amministrazione",
