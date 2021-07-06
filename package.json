@@ -25,6 +25,7 @@
     "gatsby-transformer-sharp": "^3.8.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "cross-env": "^7.0.3",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-markdown": "^6.0.2",
@@ -41,7 +42,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
