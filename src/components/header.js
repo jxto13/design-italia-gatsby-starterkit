@@ -166,11 +166,16 @@ const SlimHeader = ({ theme }) => {
 const CenterHeader = ({ theme, townName, townTagLine }) => {
   return (
     <Header type="center" theme={theme}>
+      {/* <HeaderContent style={{justifyContent: "center"}}> */}
       <HeaderContent>
-        <HeaderBrand iconName="it-pa" tag={Link} to="/">
-          <h2>{townName}</h2>
-          <h3>{townTagLine}</h3>
-        </HeaderBrand>
+
+        <Link to='/' style={{textDecoration:"none"}} >
+          <HeaderBrand iconName="it-pa">
+            <h2>{townName}</h2>
+            <h3>{townTagLine}</h3>
+          </HeaderBrand>
+        </Link>
+
         <HeaderRightZone>
           <HeaderSocialsZone label="Seguici su">
             <ul>
@@ -264,7 +269,7 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
   const { name, tagLine } = town;
   return (
     <Headers sticky={!sticky}>
-      <SlimTag theme={theme} />
+      {/* <SlimTag theme={theme} /> */}
       <div className="it-nav-wrapper">
         <CenterHeader theme={theme} townName={name} townTagLine={tagLine} />
         <NavHeader theme={theme} active={page} />

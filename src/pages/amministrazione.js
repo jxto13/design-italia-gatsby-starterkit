@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState } from "react";
 import { Link } from "gatsby";
 import {
   Breadcrumb,
@@ -15,16 +15,17 @@ import {
   Col,
   LinkListItem,
   LinkList,
+  Headers
 } from "design-react-kit";
 
-// import Layout from "../components/layout";
+import Layout from "../components/layout";
 import Page_Layout from "../components/page_layout";
 import SEO from "../components/seo";
 
 import Banner from "../components/card";
 
 const Amministrazione = ({ location }) => (
-  // <Layout location={location}>
+  <Layout location={location}>
   <Page_Layout location={location}>
     {/* eslint-disable-next-line*/}
     <SEO title="Amministrazione" />
@@ -244,8 +245,8 @@ const Amministrazione = ({ location }) => (
         </div>
       </section>
     </main>
-  {/* </Layout> */}
   </Page_Layout>
+  </Layout>
 );
 
 export default Amministrazione;
