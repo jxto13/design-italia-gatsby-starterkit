@@ -25,7 +25,7 @@ const IndexPage = ({ location }) => (
     {/* eslint-disable-next-line*/}
     <SEO title="Homepage" />
     <main>
-      <section id="head-section">
+      <section id="head-section" style={{marginTop:"50px",marginBottom:"50px"}}>
         <Container>
           <Row>
             <Col lg={{ size: 6, offset: 1, order: 2 }}>
@@ -71,7 +71,7 @@ const IndexPage = ({ location }) => (
         <div className="section section-muted pb-5 pt-0">
           <Container>
             <Row>
-              <div className="card-wrapper card-teaser-wrapper card-overlapping card-teaser-wrapper-equal card-teaser-block-3">
+              <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
                 <Card
                   teaser
                   noWrapper

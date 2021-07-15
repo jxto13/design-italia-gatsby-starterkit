@@ -31,7 +31,7 @@ const Novita = ({ location }) => (
             <nav aria-label="breadcrumb" className="breadcrumb-container">
               <Breadcrumb>
                 <BreadcrumbItem>
-                  <Link to="/homepage">Home</Link>
+                  <Link to="/">Home</Link>
                   <span className="separator">/</span>
                 </BreadcrumbItem>
                 <BreadcrumbItem aria-current="page" active>

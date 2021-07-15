@@ -28,6 +28,8 @@ import {
   UncontrolledDropdown,
 } from "design-react-kit";
 
+import Hamburger from '../components/Hamburger/hamburger'
+
 function capitalize(str) {
   return `${str[0].toUpperCase()}${str.slice(1)}`;
 }
@@ -168,16 +170,32 @@ const CenterHeader = ({ theme, townName, townTagLine }) => {
     <Header type="center" theme={theme}>
       {/* <HeaderContent style={{justifyContent: "center"}}> */}
       <HeaderContent>
-
+      <HeaderRightZone>
+        <div>hello</div>
+      </HeaderRightZone>
         <Link to='/' style={{textDecoration:"none"}} >
-          <HeaderBrand iconName="it-pa">
-            <h2>{townName}</h2>
-            <h3>{townTagLine}</h3>
-          </HeaderBrand>
-        </Link>
+        
+          {/* <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}> */}
+            {/* <h2>{townName}</h2>
+            <h3>{townTagLine}</h3> */}
+          {/* </HeaderBrand> */}
 
+    <div className="it-brand-wrapper">
+      <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon" style={{marginRight: "0px"}}>
+                <path
+                    d="M3 21h18v1H3zm0-1h18v-1H3zM22 9H2l10-7zM5.2 8h13.6L12 3.2zM6 18v-8H5v8zm4 0v-8H9v8zm5 0v-8h-1v8zm4 0v-8h-1v8z">
+                </path>
+                <path fill="none" d="M0 0h24v24H0z"></path>
+            </svg>
+            <div className="it-brand-text"></div>
+        </a></div>
+
+        </Link>
+        
+        <div>
         <HeaderRightZone>
-          <HeaderSocialsZone label="Seguici su">
+          {/* <HeaderSocialsZone label="Seguici su"> */}
+          <HeaderSocialsZone>
             <ul>
               <li>
                 <Link to="#" aria-label="Facebook" target="_blank">
@@ -198,6 +216,8 @@ const CenterHeader = ({ theme, townName, townTagLine }) => {
           </HeaderSocialsZone>
           {/* <HeaderSearch label="Cerca" iconName="it-search" /> */}
         </HeaderRightZone>
+        </div>
+        
       </HeaderContent>
     </Header>
   );
@@ -222,8 +242,10 @@ const NavHeader = ({ active, theme }) => {
           header
           onOverlayClick={() => toggleDropdown(!isOpen)}
         >
-          <div className="menu-wrapper">
-            <Nav navbar>
+            
+          <div className="menu-wrapper" style={{justifyContent: "center"}}>
+
+            <Nav navbar className="navbar-secondary">
               {["amministrazione", "novita", "servizi", "documenti"].map(
                 label => {
                   const isActive = label === active;
@@ -238,7 +260,9 @@ const NavHeader = ({ active, theme }) => {
                 }
               )}
             </Nav>
-            <Nav navbar className="navbar-secondary">
+
+
+            {/* <Nav navbar className="navbar-secondary">
               {[
                 { label: "Argomento 1" },
                 { label: "Argomento 2" },
@@ -254,11 +278,32 @@ const NavHeader = ({ active, theme }) => {
                   </NavItem>
                 );
               })}
-            </Nav>
+            </Nav> */}
           </div>
         </Collapse>
       </HeaderContent>
     </Header>
+  );
+};
+
+
+const NewHeader =({ active, theme }) => {
+  const [isOpen, toggleDropdown] = useState(false);
+  return (
+    <>
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div id="container">
+              <Hamburger/> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 
@@ -273,6 +318,7 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
       <div className="it-nav-wrapper">
         <CenterHeader theme={theme} townName={name} townTagLine={tagLine} />
         <NavHeader theme={theme} active={page} />
+        {/* <NewHeader theme={theme} active={page}/> */}
       </div>
     </Headers>
   );
