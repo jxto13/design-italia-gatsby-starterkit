@@ -31,7 +31,7 @@ const Form = () => (
         </p>
       </form>
     <br/>
-    <form name="dogPictures" method="POST" data-netlify="true">
+    <form name="dogPictures" action="/success" method="POST" data-netlify="true">
   <p>
     <label>Dog’s Name: <input type="text" name="name" /></label>   
   </p>
