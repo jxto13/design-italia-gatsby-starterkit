@@ -71,13 +71,13 @@ const IndexPage = ({ location }) => (
         <div className="section section-muted pb-5 pt-0">
           <Container>
             <Row>
-              <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
+              <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3" style={{marginTop: "50px"}}>
                 <Card
                   teaser
                   noWrapper
                   className="card-teaser-image card-flex no-after rounded shadow"
                 >
-                  <div className="card-image-wrapper with-read-more pb-5">
+                  <div className="card-image-wrapper with-read-more pb-5" >
                     <CardBody className="p-4">
                       <CardCategory>
                         <Icon icon="it-pa" />
@@ -150,7 +150,7 @@ const IndexPage = ({ location }) => (
             </Row>
             <Row className="row-title pt-5 pb-3">
               <h2>Calendario</h2>
-              <div>
+              {/* <div>
                 <Button
                   color="secondary"
                   size="sm"
@@ -189,7 +189,7 @@ const IndexPage = ({ location }) => (
                   <Icon icon="it-settings" />
                   <span>Scadenze</span>
                 </Button>
-              </div>
+              </div> */}
             </Row>
             <Row className="row-calendar">
               <div className="it-carousel-wrapper it-carousel-landscape-abstract-three-cols it-calendar-wrapper">
@@ -617,7 +617,7 @@ const IndexPage = ({ location }) => (
                 </Card>
               </div>
             </div>
-            <Row className="pt-5">
+            {/* <Row className="pt-5">
               <Col lg={{ size: 10, offset: 1 }} xl={{ size: 8, offset: 2 }}>
                 <Row className="d-lg-inline-flex">
                   <Col lg={3}>
@@ -676,7 +676,7 @@ const IndexPage = ({ location }) => (
                   </Col>
                 </Row>
               </Col>
-            </Row>
+            </Row> */}
             <Row className="pt-5">
               <h3>Siti tematici</h3>
             </Row>
@@ -722,7 +722,7 @@ const IndexPage = ({ location }) => (
           </Container>
         </div>
       </section>
-      <section id="novita">
+      {/* <section id="novita">
         <div
           className="section section-background-header"
           style={{ backgroundImage: "url('https://picsum.photos/1200/400')" }}
@@ -776,7 +776,7 @@ const IndexPage = ({ location }) => (
             </Row>
           </Container>
         </div>
-      </section>
+      </section> */}
     </main>
   </Layout>
 );

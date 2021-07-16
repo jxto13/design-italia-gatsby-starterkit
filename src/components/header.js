@@ -1,6 +1,6 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 import {
   Button,
@@ -26,39 +26,40 @@ import {
   NavLink,
   HeaderBrand,
   UncontrolledDropdown,
-} from "design-react-kit";
+} from 'design-react-kit';
 
-import Hamburger from '../components/Hamburger/hamburger'
+import Hamburger from '../components/Hamburger/hamburger';
+import Img1 from '../images/tes.svg';
 
 function capitalize(str) {
   return `${str[0].toUpperCase()}${str.slice(1)}`;
 }
 
 function getSectionFullName(section) {
-  if (section === "documenti") {
-    return "Documenti e Dati";
+  if (section === 'documenti') {
+    return 'Documenti e Dati';
   }
-  if (section === "novita") {
-    return "Novità";
+  if (section === 'novita') {
+    return 'Novità';
   }
   return section;
 }
 
 function getSectionFromLocation({ pathname } = {}) {
-  if (pathname === "/") {
-    return "";
+  if (pathname === '/') {
+    return '';
   }
   if (/amministrazione/.test(pathname)) {
-    return "amministrazione";
+    return 'amministrazione';
   }
   if (/novita/.test(pathname)) {
-    return "novita";
+    return 'novita';
   }
   if (/servizi/.test(pathname)) {
-    return "servizi";
+    return 'servizi';
   }
   if (/documenti/.test(pathname)) {
-    return "documenti";
+    return 'documenti';
   }
 }
 
@@ -107,7 +108,7 @@ const SlimHeader = ({ theme }) => {
   return (
     <Header type="slim" theme={theme}>
       <HeaderContent>
-        <HeaderBrand tag={Link} to='/'>
+        <HeaderBrand tag={Link} to="/">
           Ente appartenenza/Owner
         </HeaderBrand>
         <HeaderLinkZone>
@@ -117,19 +118,12 @@ const SlimHeader = ({ theme }) => {
           </HeaderToggler>
           <Collapse isOpen={isOpen} header>
             <LinkList tag="div">
-              <LinkListItem
-                href="#"
-                tag="a"
-              >
+              <LinkListItem href="#" tag="a">
                 Link 1
-          </LinkListItem>
-              <LinkListItem
-                active
-                href="#"
-                tag="a"
-              >
+              </LinkListItem>
+              <LinkListItem active href="#" tag="a">
                 Link 2 Active
-          </LinkListItem>
+              </LinkListItem>
             </LinkList>
           </Collapse>
         </HeaderLinkZone>
@@ -170,54 +164,53 @@ const CenterHeader = ({ theme, townName, townTagLine }) => {
     <Header type="center" theme={theme}>
       {/* <HeaderContent style={{justifyContent: "center"}}> */}
       <HeaderContent>
-      <HeaderRightZone>
-        <div>hello</div>
-      </HeaderRightZone>
-        <Link to='/' style={{textDecoration:"none"}} >
-        
+        <HeaderRightZone>
+          <div>hello</div>
+        </HeaderRightZone>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           {/* <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}> */}
-            {/* <h2>{townName}</h2>
+          {/* <h2>{townName}</h2>
             <h3>{townTagLine}</h3> */}
           {/* </HeaderBrand> */}
 
-    <div className="it-brand-wrapper">
-      <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon" style={{marginRight: "0px"}}>
+          <div className="it-brand-wrapper">
+            {/* <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon" style={{marginRight: "0px"}}>
                 <path
                     d="M3 21h18v1H3zm0-1h18v-1H3zM22 9H2l10-7zM5.2 8h13.6L12 3.2zM6 18v-8H5v8zm4 0v-8H9v8zm5 0v-8h-1v8zm4 0v-8h-1v8z">
                 </path>
                 <path fill="none" d="M0 0h24v24H0z"></path>
             </svg>
             <div className="it-brand-text"></div>
-        </a></div>
-
+        </a> */}
+            <img src={Img1} alt={'test'} />
+          </div>
         </Link>
-        
+
         <div>
-        <HeaderRightZone>
-          {/* <HeaderSocialsZone label="Seguici su"> */}
-          <HeaderSocialsZone>
-            <ul>
-              <li>
-                <Link to="#" aria-label="Facebook" target="_blank">
-                  <Icon icon="it-facebook" />
-                </Link>
-              </li>
-              <li>
-                <Link to="#" aria-label="Github" target="_blank">
-                  <Icon icon="it-github" />
-                </Link>
-              </li>
-              <li>
-                <Link to="#" aria-label="Twitter" target="_blank">
-                  <Icon icon="it-twitter" />
-                </Link>
-              </li>
-            </ul>
-          </HeaderSocialsZone>
-          {/* <HeaderSearch label="Cerca" iconName="it-search" /> */}
-        </HeaderRightZone>
+          <HeaderRightZone>
+            {/* <HeaderSocialsZone label="Seguici su"> */}
+            <HeaderSocialsZone>
+              <ul>
+                <li>
+                  <Link to="#" aria-label="Facebook" target="_blank">
+                    <Icon icon="it-facebook" />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" aria-label="Github" target="_blank">
+                    <Icon icon="it-github" />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" aria-label="Twitter" target="_blank">
+                    <Icon icon="it-twitter" />
+                  </Link>
+                </li>
+              </ul>
+            </HeaderSocialsZone>
+            {/* <HeaderSearch label="Cerca" iconName="it-search" /> */}
+          </HeaderRightZone>
         </div>
-        
       </HeaderContent>
     </Header>
   );
@@ -226,7 +219,7 @@ const CenterHeader = ({ theme, townName, townTagLine }) => {
 const NavHeader = ({ active, theme }) => {
   const [isOpen, toggleDropdown] = useState(false);
   return (
-    <Header type="navbar" theme={theme}>
+    <Header type="navbar" theme={theme} style={{borderBottomWidth: "5px", borderColor: "#06c",borderBottomStyle: "solid"}}>
       <HeaderContent expand="lg" megamenu>
         <HeaderToggler
           onClick={() => toggleDropdown(!isOpen)}
@@ -242,11 +235,9 @@ const NavHeader = ({ active, theme }) => {
           header
           onOverlayClick={() => toggleDropdown(!isOpen)}
         >
-            
-          <div className="menu-wrapper" style={{justifyContent: "center"}}>
-
+          <div className="menu-wrapper" style={{ justifyContent: 'center'}}>
             <Nav navbar className="navbar-secondary">
-              {["amministrazione", "novita", "servizi", "documenti"].map(
+              {['amministrazione', 'novita', 'servizi', 'documenti'].map(
                 label => {
                   const isActive = label === active;
                   return (
@@ -260,7 +251,6 @@ const NavHeader = ({ active, theme }) => {
                 }
               )}
             </Nav>
-
 
             {/* <Nav navbar className="navbar-secondary">
               {[
@@ -286,29 +276,28 @@ const NavHeader = ({ active, theme }) => {
   );
 };
 
-
-const NewHeader =({ active, theme }) => {
+const NewHeader = ({ active, theme }) => {
   const [isOpen, toggleDropdown] = useState(false);
   return (
-    <>
-    <div class="it-header-center-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div id="container">
-              <Hamburger/> 
+    <Header type="center" theme={theme}>
+      {/* <HeaderContent style={{justifyContent: "center"}}> */}
+      <HeaderContent style={{ justifyContent: 'center' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}> 
+            <h2>Nome del Comune</h2>
+            <h3>Uno dei tanti Comuni d'Italia</h3>
+           </HeaderBrand>
+          
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </>
+            {/* <img src={Img1} alt={'test'} /> */}
+        </Link>
+      </HeaderContent>
+    </Header>
   );
 };
 
 const CompleteHeader = ({ location, sticky, theme, type, town }) => {
-  const SlimTag = type === "default" ? SlimHeader : SlimHeaderFullResponsive;
+  const SlimTag = type === 'default' ? SlimHeader : SlimHeaderFullResponsive;
 
   const page = getSectionFromLocation(location);
   const { name, tagLine } = town;
@@ -316,9 +305,9 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
     <Headers sticky={!sticky}>
       {/* <SlimTag theme={theme} /> */}
       <div className="it-nav-wrapper">
-        <CenterHeader theme={theme} townName={name} townTagLine={tagLine} />
+        {/* <CenterHeader theme={theme} townName={name} townTagLine={tagLine} /> */}
+        <NewHeader theme={theme} active={page} />
         <NavHeader theme={theme} active={page} />
-        {/* <NewHeader theme={theme} active={page}/> */}
       </div>
     </Headers>
   );
@@ -336,7 +325,7 @@ CompleteHeader.propTypes = {
 };
 
 CompleteHeader.defaultProps = {
-  type: "default",
+  type: 'default',
 };
 
 export default CompleteHeader;
