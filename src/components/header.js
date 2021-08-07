@@ -29,7 +29,7 @@ import {
 } from 'design-react-kit';
 
 import Hamburger from '../components/Hamburger/hamburger';
-import Img1 from '../images/tes.svg';
+import Img1 from '../images/imagem2.png';
 
 function capitalize(str) {
   return `${str[0].toUpperCase()}${str.slice(1)}`;
@@ -283,13 +283,28 @@ const NewHeader = ({ active, theme }) => {
       {/* <HeaderContent style={{justifyContent: "center"}}> */}
       <HeaderContent style={{ justifyContent: 'center' }}>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}> 
-            <h2>Nome del Comune</h2>
-            <h3>Uno dei tanti Comuni d'Italia</h3>
-           </HeaderBrand>
+          {/* <img src={Img1} style={{width: "82px", height: "82px", marginRight: "16px"}} alt={'test'} /> */}
+        
+          {/* <HeaderBrand style={{marginRight: "0px"}}>  */}
+          <div className="it-brand-wrapper">
+            <a>
+              
+              <img className="icon" src={Img1} alt={'test2'} style={{width: "80px", height: "108px"}}/>
+              <div className="it-brand-text">
+              {/* <h2>Nome del Comune</h2>
+            <h3>Uno dei tanti Comuni d'Italia</h3> */}
+            <h2>Porto Santo</h2>
+            <h3>Junta de Freguesia</h3>
+              </div>
+            </a>
+          </div>
+
+          {/* <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}>  */}
+            {/* <h2>Nome del Comune</h2>
+            <h3>Uno dei tanti Comuni d'Italia</h3> */}
+           {/* </HeaderBrand> */}
           
 
-            {/* <img src={Img1} alt={'test'} /> */}
         </Link>
       </HeaderContent>
     </Header>

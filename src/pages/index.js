@@ -20,6 +20,8 @@ import {
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+import Test from "../components/Three/threecollum"
+
 const IndexPage = ({ location }) => (
   <Layout location={location}>
     {/* eslint-disable-next-line*/}
@@ -69,10 +71,12 @@ const IndexPage = ({ location }) => (
       </section>
       <section id="calendario">
         <div className="section section-muted pb-5 pt-0">
+
           <Container>
+        <Test/>
             <Row>
               <div className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3" style={{marginTop: "50px"}}>
-                <Card
+                {/* <Card
                   teaser
                   noWrapper
                   className="card-teaser-image card-flex no-after rounded shadow"
@@ -102,6 +106,26 @@ const IndexPage = ({ location }) => (
                     iconName="it-arrow-right"
                     text="Tutta l'amministrazione"
                     href="/design-comuni-prototipi/esempi/bootstrap-italia/template-amministrazione.html"
+                  />
+                </Card> */}
+                <Card teaser noWrapper className="no-after rounded shadow">
+                  <CardBody className="pb-5">
+                    <CardCategory>
+                      <Icon icon="it-pa" />
+                      Giunta e consiglio
+                    </CardCategory>
+                    <CardTitle className="font-weight-semibold">
+                    Mario Rossi
+                    </CardTitle>
+                    <CardText>
+                    Sindaco della città
+                    </CardText>
+                  </CardBody>
+
+                  <CardReadMore
+                    iconName="it-arrow-right"
+                    text="Tutta l'amministrazione"
+                    href="/"
                   />
                 </Card>
                 <Card teaser noWrapper className="no-after rounded shadow">
