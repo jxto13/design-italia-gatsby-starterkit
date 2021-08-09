@@ -6,22 +6,11 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { Link } from 'gatsby';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Card,
   CardBody,
   CardTitle,
   CardText,
-  CardReadMore,
-  Container,
-  Icon,
-  Input,
-  Row,
-  Col,
-  LinkListItem,
-  LinkList,
-  UncontrolledCollapse,
-  CardCategory,
+  Row
 } from 'design-react-kit';
 
 const CardStyle = () => {

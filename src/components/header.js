@@ -289,7 +289,7 @@ const NewHeader = ({ active, theme }) => {
           <div className="it-brand-wrapper">
             <a>
               
-              <img className="icon" src={Img1} alt={'test2'} style={{width: "80px", height: "108px"}}/>
+              <img className="icon" src={Img1} alt={'test2'} style={{height: "90%"}}/>
               <div className="it-brand-text">
               {/* <h2>Nome del Comune</h2>
             <h3>Uno dei tanti Comuni d'Italia</h3> */}
@@ -318,7 +318,7 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
   const { name, tagLine } = town;
   return (
     <Headers sticky={!sticky}>
-      {/* <SlimTag theme={theme} /> */}
+      <SlimTag theme={theme} />
       <div className="it-nav-wrapper">
         {/* <CenterHeader theme={theme} townName={name} townTagLine={tagLine} /> */}
         <NewHeader theme={theme} active={page} />

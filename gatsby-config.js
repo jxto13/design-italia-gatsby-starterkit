@@ -29,6 +29,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://localhost:1337",
+        collectionTypes: [
+          "articles",
+        ],
+        queryLimit: 1000,
+      },
     }
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
