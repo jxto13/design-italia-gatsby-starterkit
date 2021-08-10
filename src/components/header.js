@@ -102,7 +102,7 @@ const SlimHeaderFullResponsive = ({ theme }) => {
     </Header>
   );
 };
-
+{/*
 const SlimHeader = ({ theme }) => {
   const [isOpen, toggleDropdown] = useState(false);
   return (
@@ -157,7 +157,7 @@ const SlimHeader = ({ theme }) => {
       </HeaderContent>
     </Header>
   );
-};
+}; */}
 
 const CenterHeader = ({ theme, townName, townTagLine }) => {
   return (
@@ -279,33 +279,89 @@ const NavHeader = ({ active, theme }) => {
 const NewHeader = ({ active, theme }) => {
   const [isOpen, toggleDropdown] = useState(false);
   return (
-    <Header type="center" theme={theme}>
+    <Header type="center" theme={theme} style={{height: "120%"}}>
       {/* <HeaderContent style={{justifyContent: "center"}}> */}
       <HeaderContent style={{ justifyContent: 'center' }}>
         <Link to="/" style={{ textDecoration: 'none' }}>
           {/* <img src={Img1} style={{width: "82px", height: "82px", marginRight: "16px"}} alt={'test'} /> */}
         
           {/* <HeaderBrand style={{marginRight: "0px"}}>  */}
-          <div className="it-brand-wrapper">
+          {/* <div className="it-brand-wrapper">
             <a>
               
               <img className="icon" src={Img1} alt={'test2'} style={{height: "90%"}}/>
               <div className="it-brand-text">
-              {/* <h2>Nome del Comune</h2>
-            <h3>Uno dei tanti Comuni d'Italia</h3> */}
+              <h2>Nome del Comune</h2>
+            <h3>Uno dei tanti Comuni d'Italia</h3>
             <h2>Porto Santo</h2>
             <h3>Junta de Freguesia</h3>
               </div>
             </a>
-          </div>
+          </div> */}
 
-          {/* <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}>  */}
-            {/* <h2>Nome del Comune</h2>
-            <h3>Uno dei tanti Comuni d'Italia</h3> */}
-           {/* </HeaderBrand> */}
+          <HeaderBrand iconName="it-pa" style={{marginRight: "0px"}}> 
+            <h2>Nome del Comune</h2>
+            <h3>Uno dei tanti Comuni d'Italia</h3>
+           </HeaderBrand>
           
 
         </Link>
+      </HeaderContent>
+    </Header>
+  );
+};
+
+const SlimHeader = ({ theme }) => {
+  const [isOpen, toggleDropdown] = useState(false);
+  return (
+    <Header type="slim" theme={theme}>
+      <HeaderContent>
+        <HeaderBrand tag={Link} to="/">
+          Ente appartenenza/Owner
+        </HeaderBrand>
+        
+        <HeaderRightZone>
+          <UncontrolledDropdown nav tag="div">
+            <DropdownToggle nav caret>
+              ITA
+              <Icon icon="it-expand" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <Row>
+                <Col size="12">
+                  <LinkList>
+                    <LinkListItem tag={DropdownItem} href="#">
+                      <span>ITA</span>
+                    </LinkListItem>
+                    <LinkListItem tag={DropdownItem} href="#">
+                      <span>ENG</span>
+                    </LinkListItem>
+                  </LinkList>
+                </Col>
+              </Row>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+          <UncontrolledDropdown nav tag="div">
+            <DropdownToggle nav caret>
+              ITA
+              <Icon icon="it-expand" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <Row>
+                <Col size="12">
+                  <LinkList>
+                    <LinkListItem tag={DropdownItem} href="#">
+                      <span>ITA</span>
+                    </LinkListItem>
+                    <LinkListItem tag={DropdownItem} href="#">
+                      <span>ENG</span>
+                    </LinkListItem>
+                  </LinkList>
+                </Col>
+              </Row>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </HeaderRightZone>
       </HeaderContent>
     </Header>
   );
@@ -318,7 +374,7 @@ const CompleteHeader = ({ location, sticky, theme, type, town }) => {
   const { name, tagLine } = town;
   return (
     <Headers sticky={!sticky}>
-      <SlimTag theme={theme} />
+      {/* <SlimTag theme={theme} /> */}
       <div className="it-nav-wrapper">
         {/* <CenterHeader theme={theme} townName={name} townTagLine={tagLine} /> */}
         <NewHeader theme={theme} active={page} />
