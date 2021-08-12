@@ -17,10 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
           `{
             allStrapiArticles {
               nodes{
-                  id
-                  title
                   slug
-                  content
               }
             }
           }`
@@ -29,6 +26,23 @@ exports.createPages = ({ graphql, actions }) => {
             console.log(result.errors)
             reject(result.errors)
           }
+          
+          const posts = result.data.allStrapiArticles.nodes;
+          const postsPerPage = 2;
+          const numPages = Math.ceil(posts.length / postsPerPage);
+          Array.from({ length: numPages }).forEach((_, i) => {
+            createPage({
+              path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+              component: path.resolve('./src/templates/blog-list-template.js'),
+              context: {
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                numPages,
+                currentPage: i + 1,
+              },
+            });
+          });
+
 
           const allPosts = result.data.allStrapiArticles.nodes
           allPosts.forEach(blog => {
@@ -36,13 +50,13 @@ exports.createPages = ({ graphql, actions }) => {
               path: `/${blog.slug}`,
               component: path.resolve(`./src/templates/blog-post.js`),
               context: {
-                title: blog.title,
                 slug: blog.slug,
-                content: blog.content
               }
             }
             createPage(page)
           })
+
+
         })
       )
     })
